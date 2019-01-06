@@ -1,6 +1,6 @@
 pipeline {
   environment{
-    c = "${GIT_URL##*/}"
+    c = "bobby"
   }
     agent any 
     stages {
