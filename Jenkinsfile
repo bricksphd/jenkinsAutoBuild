@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'echo $GIT_URL' 
+                sh 'a=$GIT_URL'
+                sh 'b=${a##*/}'
+                sh 'echo b' 
                 sh 'yarn'
             }
         }
