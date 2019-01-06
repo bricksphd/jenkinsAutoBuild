@@ -1,6 +1,6 @@
 pipeline {
   environment{
-    def c = "bobby"
+    def c = "$GIT_URL"
   }
     agent any 
     stages {
