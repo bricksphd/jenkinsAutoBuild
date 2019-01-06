@@ -1,9 +1,12 @@
 pipeline {
+  environment{
+    c = "${GIT_URL##*/}"
+  }
     agent any 
     stages {
         stage('Build') { 
             steps {
-                sh 'echo ${GIT_URL##*/}'
+                sh 'echo $c'
                 sh 'b=`echo `'
                 sh 'echo $b' 
                 sh 'yarn'
