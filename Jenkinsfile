@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'a=\'$GIT_URL\''
-                sh 'echo ${a##*/}'
+                sh 'b=`echo ${a##*/}`'
                 sh 'echo $b' 
                 sh 'yarn'
             }
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh 'echo deploy' 
+                sh 'echo $b' 
             }
         }
     }
