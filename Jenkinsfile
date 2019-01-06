@@ -1,12 +1,13 @@
 pipeline {
   environment{
-    CC = """${sh(
+    a = """${sh(
                 returnStdout: true,
                 script: 'echo ${GIT_URL##*/}'
             )}""" 
+
     CC2 = """${sh(
                 returnStdout: true,
-                script: 'echo ${CC,,}'
+                script: 'echo ${a,,}'
             )}""" 
     
   }
