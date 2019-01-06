@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'a=\'$GIT_URL\''
+                sh 'a=`echo $GIT_URL`'
                 sh 'echo $a'
                 sh 'b=`echo ${a##*/}`'
                 sh 'echo $b' 
