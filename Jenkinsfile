@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'echo $BUILD_NUMBER' 
+                sh 'echo $GIT_URL' 
             }
         }
         stage('Test') { 
