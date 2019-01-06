@@ -1,0 +1,11 @@
+{
+  "name": "jenkinsAutoBuild",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bricksphd/jenkinsAutoBuild",
+  "author": "B Ricks <bricks@unomaha.edu>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

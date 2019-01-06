@@ -4,6 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'echo $GIT_URL' 
+                sh 'yarn'
             }
         }
         stage('Test') { 
