@@ -1,6 +1,9 @@
 pipeline {
   environment{
-    def c = "$GIT_URL"
+    CC = """${sh(
+                returnStdout: true,
+                script: 'echo $GIT_URL'
+            )}""" 
     
   }
     agent any 
@@ -8,7 +11,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh "e=${env.GIT_URL}"
-                sh 'echo $e'
+                sh 'echo $CC'
                 sh 'd=${c##*/}'
                 sh 'echo $d'
                 sh 'b=`echo `'
