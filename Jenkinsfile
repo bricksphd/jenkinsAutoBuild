@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                echo 'Running ${GIT_URL}'
                 sh 'echo $c'
                 sh 'd=${c##*/}'
                 sh 'echo $d'
