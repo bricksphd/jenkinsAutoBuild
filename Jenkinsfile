@@ -16,9 +16,10 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh 'docker stop ${GIT_URL##*/} || true && docker rm ${GIT_URL##*/} || true'
-                sh 'docker build --tag ${GIT_URL##*/} .'
-                sh 'docker run -d -p 3333:3000 --name ${GIT_URL##*/} -e "PASSWORD=adminadmin" ${GIT_URL##*/}' 
+                sh 'b=${GIT_URL##*/}'
+                sh 'docker stop $b || true && docker rm $b || true'
+                sh 'docker build --tag $b .'
+                sh 'docker run -d -p 3333:3000 --name $b -e "PASSWORD=adminadmin" $b' 
             }
         }
     }
