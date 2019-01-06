@@ -4,6 +4,10 @@ pipeline {
                 returnStdout: true,
                 script: 'echo ${GIT_URL##*/}'
             )}""" 
+    CC2 = """${sh(
+                returnStdout: true,
+                script: 'echo ${CC,,}'
+            )}""" 
     
   }
     agent any 
@@ -12,6 +16,7 @@ pipeline {
             steps {
                 sh "e=${env.GIT_URL}"
                 sh 'echo $CC'
+                sh 'echo $CC2'
                 sh 'd=${c##*/}'
                 sh 'echo $d'
                 sh 'b=`echo `'
