@@ -1,6 +1,6 @@
 pipeline {
   environment{
-    c = "bobby"
+    def c = "bobby"
   }
     agent any 
     stages {
