@@ -1,8 +1,8 @@
 node{
   checkout scm
-  def a = env
+ 
   stage('Build'){
-   
+    def a = env.GIT_URL
     sh "echo ${a}"
     
   }
