@@ -1,6 +1,6 @@
 node{
   checkout scm
-  def a = env.BRANCH_NAME
+  def a = env.GIT_COMMIT
   stage('Build'){
    
     sh "echo ${a}"
